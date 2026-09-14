@@ -26,6 +26,7 @@
             --white: #ffffff;
             --gray-text: #64748b;
             --shadow: 0 10px 30px rgba(0,0,0,0.06);
+            --shadow-hover: 0 15px 35px rgba(13, 110, 253, 0.15);
         }
         body {
             background-color: var(--light-bg);
@@ -273,61 +274,159 @@
             opacity: 0.9;
         }
 
-        /* 6. CONTACT SECTION (KONTAK) */
+        /* 6. REVISI DESAIN KONTAK (DESAIN MODERN & INTERAKTIF) */
         .contact-bg {
             background: #ffffff;
         }
-        .contact-container {
-            max-width: 1100px;
+        .contact-wrapper {
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr 1.2fr;
             gap: 2.5rem;
-            text-align: center;
+            align-items: start;
         }
-        .contact-box {
-            padding: 2rem;
+        
+        /* Side Left: Information Cards */
+        .contact-info-side {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .contact-item-card {
             background: var(--light-bg);
+            padding: 1.5rem;
             border-radius: 16px;
             border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            transition: all 0.3s ease;
         }
-        .contact-box i {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .contact-item-card:hover {
+            transform: translateX(5px);
+            border-color: var(--primary);
+            background: #ffffff;
+            box-shadow: var(--shadow);
         }
-        .contact-box h4 {
-            font-size: 1.2rem;
+        .contact-icon-box {
+            width: 55px;
+            height: 55px;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+        .contact-details h4 {
+            font-size: 1.1rem;
             color: var(--secondary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 2px;
         }
-        .contact-box p, .contact-box a {
+        .contact-details p {
             color: var(--gray-text);
             font-size: 0.95rem;
         }
-        .social-links {
-            display: flex;
-            justify-content: center;
+
+        /* Modern Social Buttons */
+        .social-buttons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 1rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
+            margin-top: 0.5rem;
         }
-        .btn-social {
-            padding: 10px 20px;
-            border-radius: 8px;
-            color: white;
-            font-weight: 500;
-            font-size: 0.9rem;
-            display: inline-flex;
+        .btn-social-modern {
+            padding: 1rem;
+            border-radius: 12px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .btn-social-modern:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            color: #ffffff;
+        }
+        .btn-wa-modern {
+            background: #25D366;
+        }
+        .btn-ig-modern {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        /* Side Right: Interactive Form */
+        .contact-form-side {
+            background: var(--light-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: var(--shadow);
+        }
+        .contact-form-side h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+        .contact-form-side p {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--secondary);
+            margin-bottom: 0.4rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus {
+            border-color: var(--primary);
+        }
+        textarea.form-control {
+            resize: none;
+            height: 110px;
+        }
+        .btn-submit {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             gap: 8px;
-            transition: transform 0.2s;
+            transition: background 0.3s;
         }
-        .btn-social:hover {
-            transform: translateY(-2px);
+        .btn-submit:hover {
+            background: var(--primary-dark);
         }
-        .btn-wa { background-color: #25D366; }
-        .btn-ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 
         /* 7. FOOTER */
         footer {
@@ -339,7 +438,12 @@
             border-top: 1px solid #334155;
         }
 
-        /* RESPONSIVE DESIGN FOR MOBILE */
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
@@ -350,6 +454,9 @@
             }
             .about-container {
                 gap: 2rem;
+            }
+            .social-buttons-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -396,7 +503,6 @@
                 <p>Dengan fasilitas laboratorium yang lengkap dan kurikulum berbasis industri, kami siap membentuk lulusan yang kompeten, kreatif, dan siap bersaing di dunia kerja maupun kewirausahaan IT.</p>
             </div>
             <div class="about-image">
-                <!-- FOTO 1: Foto Tentang Kami / Lab Komputer -->
                 <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Suasana Belajar TKJ SMKN 2 Tembilahan">
             </div>
         </div>
@@ -441,21 +547,18 @@
             <h2>Dokumentasi</h2>
         </div>
         <div class="gallery-container">
-            <!-- Foto 1 (Hero background dipasang di Hero, ini Foto 2 di galeri) -->
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Praktikum Server & Network">
                 <div class="gallery-overlay">
                     <h4>Praktikum Network & Mikrotik</h4>
                 </div>
             </div>
-            <!-- Foto 2 (Foto 3 di galeri) -->
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80" alt="Perakitan Hardware PC">
                 <div class="gallery-overlay">
                     <h4>Perakitan & Maintenance PC</h4>
                 </div>
             </div>
-            <!-- Foto 3 Tambahan Galeri -->
             <div class="gallery-item">
                 <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" alt="Fasilitas Gedung Sekolah">
                 <div class="gallery-overlay">
@@ -465,36 +568,80 @@
         </div>
     </section>
 
-    <!-- 6. CONTACT SECTION -->
+    <!-- 6. REVISI SECTION KONTAK (DESAIN ELEGAN & INTERAKTIF) -->
     <section class="contact-bg" id="contact">
         <div class="section-header">
-            <h2>Kontak</h2>
+            <h2>Hubungi Kami</h2>
         </div>
-        <div class="contact-container">
-            <!-- Alamat -->
-            <div class="contact-box">
-                <i class="fa-solid fa-location-dot"></i>
-                <h4>Alamat</h4>
-                <p>SMKN 2 Tembilahan, Indragiri Hilir, Riau</p>
-            </div>
-            <!-- Email -->
-            <div class="contact-box">
-                <i class="fa-solid fa-envelope"></i>
-                <h4>Email</h4>
-                <p>info@smkn2tembilahan.sch.id</p>
-            </div>
-            <!-- Telepon & Sosial Media Direct Links -->
-            <div class="contact-box">
-                <i class="fa-solid fa-phone"></i>
-                <h4>Telepon & Media Sosial</h4>
-                <div class="social-links">
-                    <a href="https://wa.me/6282287979034" target="_blank" class="btn-social btn-wa">
-                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        
+        <div class="contact-wrapper">
+            <!-- Sisi Kiri: Kartu Informasi & Sosial Media -->
+            <div class="contact-info-side">
+                <!-- Alamat -->
+                <div class="contact-item-card">
+                    <div class="contact-icon-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Lokasi Sekolah</h4>
+                        <p>SMKN 2 Tembilahan, Indragiri Hilir, Riau</p>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-item-card">
+                    <div class="contact-icon-box">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email Resmi</h4>
+                        <p>info@smkn2tembilahan.sch.id</p>
+                    </div>
+                </div>
+
+                <!-- Telepon -->
+                <div class="contact-item-card">
+                    <div class="contact-icon-box">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Layanan Informasi</h4>
+                        <p>0822-8797-9034 (WhatsApp Direct)</p>
+                    </div>
+                </div>
+
+                <!-- Tombol Media Sosial Modern -->
+                <div class="social-buttons-grid">
+                    <a href="https://wa.me/6282287979034" target="_blank" class="btn-social-modern btn-wa-modern">
+                        <i class="fa-brands fa-whatsapp fa-lg"></i> WhatsApp
                     </a>
-                    <a href="https://instagram.com/official.smkn2tembilahan" target="_blank" class="btn-social btn-ig">
-                        <i class="fa-brands fa-instagram"></i> Instagram
+                    <a href="https://instagram.com/official.smkn2tembilahan" target="_blank" class="btn-social-modern btn-ig-modern">
+                        <i class="fa-brands fa-instagram fa-lg"></i> Instagram
                     </a>
                 </div>
+            </div>
+
+            <!-- Sisi Kanan: Form Pesan / Pertanyaan Interaktif -->
+            <div class="contact-form-side">
+                <h3>Kirim Pesan</h3>
+                <p>Ada pertanyaan seputar Jurusan TKJ SMKN 2 Tembilahan? Isi form di bawah ini:</p>
+                <form action="#" onsubmit="alert('Pesan Anda berhasil dikirim!'); return false;">
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" class="form-control" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email atau Nomor WA</label>
+                        <input type="text" class="form-control" placeholder="Nomor WA / Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pesan / Pertanyaan</label>
+                        <textarea class="form-control" placeholder="Tuliskan pertanyaan Anda di sini..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fa-solid fa-paper-plane"></i> Kirim Pesan
+                    </button>
+                </form>
             </div>
         </div>
     </section>

@@ -26,7 +26,6 @@
             --white: #ffffff;
             --gray-text: #64748b;
             --shadow: 0 10px 30px rgba(0,0,0,0.06);
-            --shadow-hover: 0 15px 35px rgba(13, 110, 253, 0.15);
         }
         body {
             background-color: var(--light-bg);
@@ -54,18 +53,20 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 1.2rem 2rem;
+            padding: 1rem 2rem;
         }
         .logo {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--secondary);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
-        .logo i {
-            color: var(--primary);
+        .logo img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
         }
         .nav-links {
             display: flex;
@@ -84,8 +85,7 @@
         /* 2. HERO SECTION */
         .hero {
             margin-top: 75px;
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), 
-                        url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: var(--white);
             text-align: center;
             padding: 8rem 2rem;
@@ -179,12 +179,15 @@
         .about-image {
             flex: 1;
             min-width: 300px;
+            text-align: center;
         }
+        /* FOTO 2: poster.jpg */
         .about-image img {
             width: 100%;
+            max-width: 400px;
             border-radius: 16px;
             box-shadow: var(--shadow);
-            object-fit: cover;
+            object-fit: contain;
         }
 
         /* 4. FEATURES SECTION (KEUNGGULAN & DATA KELAS) */
@@ -239,42 +242,29 @@
             font-size: 1.3rem;
         }
 
-        /* 5. GALLERY SECTION (DOKUMENTASI) */
+        /* 5. DOKUMENTASI (GALLERY SECTION) */
         .gallery-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            text-align: center;
         }
-        .gallery-item {
-            position: relative;
-            border-radius: 16px;
+        .gallery-card-single {
+            background: var(--white);
+            border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            height: 250px;
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .gallery-item:hover img {
-            transform: scale(1.08);
-        }
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(transparent, rgba(15, 23, 42, 0.8));
-            display: flex;
-            align-items: flex-end;
+            border: 1px solid #e2e8f0;
             padding: 1.5rem;
-            color: var(--white);
-            opacity: 0.9;
+        }
+        /* FOTO 3: infografis.jpg */
+        .gallery-card-single img {
+            width: 100%;
+            max-height: 650px;
+            object-fit: contain;
+            border-radius: 12px;
         }
 
-        /* 6. REVISI DESAIN KONTAK (DESAIN MODERN & INTERAKTIF) */
+        /* 6. CONTACT SECTION */
         .contact-bg {
             background: #ffffff;
         }
@@ -286,8 +276,6 @@
             gap: 2.5rem;
             align-items: start;
         }
-        
-        /* Side Left: Information Cards */
         .contact-info-side {
             display: flex;
             flex-direction: column;
@@ -330,8 +318,6 @@
             color: var(--gray-text);
             font-size: 0.95rem;
         }
-
-        /* Modern Social Buttons */
         .social-buttons-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -356,14 +342,9 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             color: #ffffff;
         }
-        .btn-wa-modern {
-            background: #25D366;
-        }
-        .btn-ig-modern {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
+        .btn-wa-modern { background: #25D366; }
+        .btn-ig-modern { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
 
-        /* Side Right: Interactive Form */
         .contact-form-side {
             background: var(--light-bg);
             padding: 2.5rem;
@@ -467,7 +448,8 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <i class="fa-solid fa-network-wired"></i>
+                <!-- FOTO 1: logo.jpg -->
+                <img src="logo.jpg" alt="Logo SMKN 2 Tembilahan">
                 <span>TKJ SMKN 2 TEMBILAHAN</span>
             </div>
             <ul class="nav-links">
@@ -503,7 +485,8 @@
                 <p>Dengan fasilitas laboratorium yang lengkap dan kurikulum berbasis industri, kami siap membentuk lulusan yang kompeten, kreatif, dan siap bersaing di dunia kerja maupun kewirausahaan IT.</p>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Suasana Belajar TKJ SMKN 2 Tembilahan">
+                <!-- FOTO 2: poster.jpg -->
+                <img src="poster.jpg" alt="Poster SMKN 2 Tembilahan">
             </div>
         </div>
     </section>
@@ -544,40 +527,25 @@
     <!-- 5. DOKUMENTASI (GALLERY SECTION) -->
     <section id="dokumentasi">
         <div class="section-header">
-            <h2>Dokumentasi</h2>
+            <h2>Dokumentasi & Informasi Jurusan</h2>
         </div>
         <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Praktikum Server & Network">
-                <div class="gallery-overlay">
-                    <h4>Praktikum Network & Mikrotik</h4>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80" alt="Perakitan Hardware PC">
-                <div class="gallery-overlay">
-                    <h4>Perakitan & Maintenance PC</h4>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80" alt="Fasilitas Gedung Sekolah">
-                <div class="gallery-overlay">
-                    <h4>Lingkungan & Lab Komputer</h4>
-                </div>
+            <div class="gallery-card-single">
+                <!-- FOTO 3: infografis.jpg -->
+                <img src="infografis.jpg" alt="Informasi Kurikulum TKJ SMKN 2 Tembilahan">
             </div>
         </div>
     </section>
 
-    <!-- 6. REVISI SECTION KONTAK (DESAIN ELEGAN & INTERAKTIF) -->
+    <!-- 6. CONTACT SECTION -->
     <section class="contact-bg" id="contact">
         <div class="section-header">
             <h2>Hubungi Kami</h2>
         </div>
         
         <div class="contact-wrapper">
-            <!-- Sisi Kiri: Kartu Informasi & Sosial Media -->
+            <!-- Sisi Kiri: Informasi & Sosmed -->
             <div class="contact-info-side">
-                <!-- Alamat -->
                 <div class="contact-item-card">
                     <div class="contact-icon-box">
                         <i class="fa-solid fa-location-dot"></i>
@@ -588,7 +556,6 @@
                     </div>
                 </div>
 
-                <!-- Email -->
                 <div class="contact-item-card">
                     <div class="contact-icon-box">
                         <i class="fa-solid fa-envelope"></i>
@@ -599,7 +566,6 @@
                     </div>
                 </div>
 
-                <!-- Telepon -->
                 <div class="contact-item-card">
                     <div class="contact-icon-box">
                         <i class="fa-solid fa-phone"></i>
@@ -610,7 +576,6 @@
                     </div>
                 </div>
 
-                <!-- Tombol Media Sosial Modern -->
                 <div class="social-buttons-grid">
                     <a href="https://wa.me/6282287979034" target="_blank" class="btn-social-modern btn-wa-modern">
                         <i class="fa-brands fa-whatsapp fa-lg"></i> WhatsApp
@@ -621,7 +586,7 @@
                 </div>
             </div>
 
-            <!-- Sisi Kanan: Form Pesan / Pertanyaan Interaktif -->
+            <!-- Sisi Kanan: Form Pesan -->
             <div class="contact-form-side">
                 <h3>Kirim Pesan</h3>
                 <p>Ada pertanyaan seputar Jurusan TKJ SMKN 2 Tembilahan? Isi form di bawah ini:</p>

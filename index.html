@@ -114,16 +114,11 @@
             color: var(--green-dark);
         }
 
-        /* 2. HERO SECTION DENGAN BACKGROUND FOTO SEKOALH */
+        /* 2. HERO SECTION (HANYA MENAMPILKAN FOTO GAMBAR TANPA OVERLAY HIJAU) */
         .hero {
             margin-top: 70px;
-            /* Menggunakan foto 'background smkn 2 .jpg' dengan overlay gradasi hijau tua agar teks terbaca jelas */
-            background: linear-gradient(
-                135deg, 
-                rgba(6, 78, 59, 0.88) 0%, 
-                rgba(2, 44, 34, 0.92) 100%
-            ), 
-            url('background smkn 2 .jpg');
+            /* Hanya foto murni 'background smkn 2 .jpg' tanpa gradasi atau warna hijau */
+            background-image: url('background smkn 2 .jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -132,14 +127,6 @@
             text-align: center;
             padding: 8rem 2rem 6rem 2rem;
             overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.15), transparent 70%);
-            pointer-events: none;
         }
 
         .hero-content {
@@ -151,7 +138,7 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(16, 185, 129, 0.25);
+            background: rgba(6, 78, 59, 0.85);
             backdrop-filter: blur(5px);
             color: #34d399;
             padding: 6px 18px;
@@ -170,15 +157,17 @@
             letter-spacing: 1px;
             margin-bottom: 1.2rem;
             color: #ffffff;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            /* Bayangan teks hitam tebal agar teks tetap terbaca jelas di atas gambar asli */
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.9);
         }
 
         .hero p {
-            font-size: 1.1rem;
-            color: #d1fae5;
+            font-size: 1.15rem;
+            color: #ffffff;
             margin-bottom: 2.5rem;
-            font-weight: 300;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            font-weight: 500;
+            /* Bayangan teks hitam tebal agar teks tetap terbaca jelas di atas gambar asli */
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0, 0, 0, 0.9);
         }
 
         .btn-hero {
@@ -192,7 +181,7 @@
             align-items: center;
             gap: 12px;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow-glow);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
 
         .btn-hero:hover {
@@ -791,7 +780,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="7364767284086046725~tplv-tiktokx-cropcenter_1080_1080.jpg" alt="Logo SMKN 2 Tembilahan">
+                <img src="logo tkj.jpg" alt="Logo SMKN 2 Tembilahan">
                 <span>TKJ_<span>SMKN2</span></span>
             </div>
             <ul class="nav-links">
@@ -806,7 +795,7 @@
         </nav>
     </header>
 
-    <!-- 2. HERO SECTION (DENGAN BACKGROUND FOTO 'background smkn 2 .jpg') -->
+    <!-- 2. HERO SECTION (HANYA FOTO ASLI TANPA WARNA HIJAU OVERLAY) -->
     <section class="hero" id="home">
         <div class="hero-content">
             <span class="hero-badge tech-font"><i class="fa-solid fa-terminal"></i> system.init("TKJ_NETWORK")</span>
